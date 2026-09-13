@@ -1,305 +1,132 @@
 <div align="center">
+  <img src="frontend/public/logo.jpg" alt="MailShield Logo" width="120" />
+  <h1>MailShield</h1>
+  <p><strong>AI-Powered Email Spam & Phishing Detection</strong></p>
+  <p>MailShield is a premium, NLP-based cybersecurity application that analyzes email content using TF-IDF feature extraction, machine learning classification, and URL-based threat signals to accurately detect spam and phishing attempts.</p>
+  
+  <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1e3a8a,100:06b6d4&height=220&section=header&text=MAILSHIELD&fontSize=58&fontColor=ffffff&fontAlignY=38&desc=AI-Powered%20Email%20Spam%20Detection&descAlignY=62&descSize=20&animation=fadeIn" width="100%"/>
+  <a href="https://mailshield-frontend.onrender.com">
+    <img src="https://img.shields.io/badge/LIVE_DEMO-00E5FF?style=for-the-badge&logo=render&logoColor=black" alt="Live Demo" />
+  </a>
 
-<br/>
+  <br><br>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=2800&pause=900&color=06B6D4&center=true&vCenter=true&width=850&lines=Detect+Spam+with+NLP+%2B+Machine+Learning;TF-IDF+%2B+URL+Feature+Engineering;Linear+SVM+%7C+99.27%25+F1-Score;From+Raw+Email+to+Real-Time+Prediction" alt="Typing SVG"/>
-
-<br/><br/>
-
-<a href="https://github.com/mukherjeesarbottam-gif/MailShield">
-<img src="https://img.shields.io/badge/PROJECT-MailShield-06B6D4?style=for-the-badge&logo=shield&logoColor=white"/>
-</a>
-<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/NLP-TF--IDF-8B5CF6?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/ML-LinearSVC-F59E0B?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Streamlit-Coming%20Soon-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-
-<br/><br/>
-
-**An end-to-end NLP and Machine Learning system for intelligent email spam detection.**
-
+  <img src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/scikit_learn-F7931E?style=flat&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+  <img src="https://img.shields.io/badge/Render-%46E3B7?style=flat&logo=render&logoColor=white" alt="Render" />
 </div>
 
----
-
-# 🛡️ MailShield
-
-> **Detect spam. Analyze links. Protect inboxes.**
-
-MailShield is an **NLP-powered email classification system** designed to distinguish between legitimate emails (**HAM**) and unwanted or malicious emails (**SPAM**).
-
-The system combines **textual NLP features** with **engineered URL-based security signals** and classifies emails using a **Linear Support Vector Machine**.
-
-The final experimental model achieved:
-
-<div align="center">
-
-| 🎯 Accuracy | 🎯 Precision |  🎯 Recall | 🏆 F1 Score |
-| :---------: | :----------: | :--------: | :---------: |
-|  **99.24%** |  **99.23%**  | **99.30%** |  **99.27%** |
-
-</div>
+<br>
 
 ---
 
-# ✨ Why MailShield?
+## 🟢 Live Status
 
-Traditional text classification can identify many spam patterns from words alone.
+The application is deployed and fully operational:
 
-However, suspicious emails frequently contain **links, redirects, fake login pages, account-verification URLs, and other URL-based indicators**.
+- **🟢 LIVE APPLICATION:** [https://mailshield-frontend.onrender.com](https://mailshield-frontend.onrender.com)
+- **🟢 API ONLINE:** [https://mailshield-heu9.onrender.com/docs](https://mailshield-heu9.onrender.com/docs)
 
-MailShield therefore uses two complementary information sources:
+*The React frontend communicates securely with the deployed FastAPI inference service for real-time analysis.*
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                        INCOMING EMAIL                         │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-                 ┌─────────────┴─────────────┐
-                 │                           │
-                 ▼                           ▼
-        ┌─────────────────┐         ┌─────────────────┐
-        │   EMAIL TEXT    │         │      URLs       │
-        └────────┬────────┘         └────────┬────────┘
-                 │                           │
-                 ▼                           ▼
-        ┌─────────────────┐         ┌─────────────────┐
-        │ NLP PREPROCESS  │         │ URL ANALYSIS    │
-        └────────┬────────┘         └────────┬────────┘
-                 │                           │
-                 ▼                           ▼
-        ┌─────────────────┐         ┌─────────────────┐
-        │    TF-IDF       │         │  9 URL FEATURES │
-        │ 100,000 FEATURES│         │                 │
-        └────────┬────────┘         └────────┬────────┘
-                 │                           │
-                 └─────────────┬─────────────┘
-                               ▼
-                    ┌─────────────────────┐
-                    │   FEATURE FUSION    │
-                    │   100,009 FEATURES  │
-                    └──────────┬──────────┘
-                               ▼
-                    ┌─────────────────────┐
-                    │     LINEAR SVM      │
-                    └──────────┬──────────┘
-                               ▼
-                 ┌─────────────┴─────────────┐
-                 ▼                           ▼
-          ✅ HAM / SAFE                🚨 SPAM
+---
+
+## 📸 Screenshots
+
+| Dark Mode | Light Mode |
+| :---: | :---: |
+| **Home / Analyzer**<br><img src="docs/screenshots/mailshield-dark-home.png" alt="Dark Mode Home" width="400"/> | **Home / Analyzer**<br><img src="docs/screenshots/mailshield-light-home.png" alt="Light Mode Home" width="400"/> |
+| **SPAM Detection Result**<br><img src="docs/screenshots/mailshield-dark-spam.png" alt="Dark Mode Spam" width="400"/> | **SPAM Detection Result**<br><img src="docs/screenshots/mailshield-light-spam.png" alt="Light Mode Spam" width="400"/> |
+| **NOT SPAM Detection Result**<br><img src="docs/screenshots/mailshield-dark-not-spam.png" alt="Dark Mode Not Spam" width="400"/> | **NOT SPAM Detection Result**<br><img src="docs/screenshots/mailshield-light-not-spam.png" alt="Light Mode Not Spam" width="400"/> |
+
+---
+
+## 🛡️ Project Overview
+
+MailShield is an NLP-powered email security application designed to classify email messages as **SPAM** or **NOT SPAM** with extremely high accuracy. 
+
+It combines:
+1. Advanced text preprocessing
+2. TF-IDF feature extraction
+3. URL threat features
+4. LinearSVC classification
+5. FastAPI inference API
+6. React/TypeScript frontend
+
+The system analyzes multiple threat vectors simultaneously, including the email subject, email body, extracted URLs, URL counts, HTTP/HTTPS usage, IP-based URLs, shortened URLs, suspicious URL keywords, overall URL length, and unique domains. 
+
+*(Note: MailShield utilizes structural URL heuristics and NLP rather than performing external threat-intelligence reputation lookups.)*
+
+---
+
+## ⚙️ ML Pipeline Architecture
+
+```mermaid
+graph TD
+    A[Email] --> B(Subject + Body)
+    B --> C[Text Cleaning / Normalization]
+    C --> D[TF-IDF]
+    B --> E[URL Feature Extraction]
+    D --> F{Feature Combination}
+    E --> F
+    F --> G[LinearSVC]
+    G --> H[SPAM / NOT SPAM]
+    H --> I(Threat Report)
 ```
 
 ---
 
-# 🧠 Machine Learning Pipeline
+## 📊 Dataset
 
-```text
-Dataset
-   │
-   ▼
-Data Integration
-   │
-   ▼
-Data Quality Analysis
-   │
-   ▼
-Text Cleaning
-   │
-   ├── MIME decoding
-   ├── HTML removal
-   ├── whitespace normalization
-   ├── URL normalization
-   └── email normalization
-   │
-   ▼
-NLP Preprocessing
-   │
-   ├── Tokenization
-   ├── Stopword processing
-   └── Lemmatization
-   │
-   ▼
-Feature Engineering
-   │
-   ├───────────────┐
-   ▼               ▼
- TF-IDF          URL Features
-   │               │
-   │          ┌────┴─────────────┐
-   │          │ 9 engineered     │
-   │          │ URL signals      │
-   │          └────┬─────────────┘
-   │               │
-   └───────┬───────┘
-           ▼
-    Feature Fusion
-           │
-           ▼
-      Linear SVM
-           │
-           ▼
-    HAM / SPAM
-```
+MailShield was trained on a robust, consolidated corpus of **82,486 emails** from established cybersecurity datasets:
+
+| Source | Count |
+| --- | --- |
+| SpamAssassin | 5,809 |
+| Nigerian Fraud | 3,332 |
+| Enron | 29,767 |
+| Ling | 2,859 |
+| CEAS_08 | 39,154 |
+| Nazario | 1,565 |
+| **Total** | **82,486** |
+
+**Class Distribution:**
+- **HAM:** 39,595
+- **SPAM:** 42,891
+
+**Data Split:**
+- Training: 65,988
+- Testing: 16,498
+
+*(Note: The consolidated `phishing_email.csv` represents the final dataset and should not be concatenated with the raw source files).*
 
 ---
 
-# 🔬 NLP Processing
+## 🧹 Text Preprocessing
 
-The text preprocessing pipeline handles several real-world email characteristics.
+The preprocessing pipeline ensures the ML model receives highly normalized data. The actual TF-IDF input is the `text_normalized` field, processed via:
 
-### Processing stages
-
-* MIME-encoded subject decoding
-* HTML removal
-* whitespace normalization
-* control-character removal
-* email address normalization
-* URL normalization
-* lowercasing
-* tokenization
-* stopword processing
-* lemmatization
-
-Special signals are preserved:
-
-```text
-URL
-EMAIL
-numbers
-punctuation
-```
-
-This is intentional because spam emails often rely on unusual formatting, numbers, symbols, URLs, and contact patterns.
+- MIME subject decoding
+- HTML removal
+- Control character cleanup
+- Whitespace normalization
+- Lowercasing
+- URL normalization to `URL`
+- Email address normalization to `EMAIL`
+- Tokenization
+- Stopword processing
+- Lemmatization
 
 ---
 
-# 🔗 URL Intelligence
+## 🧮 TF-IDF Configuration
 
-MailShield does not simply check whether an email contains a URL.
-
-It extracts **nine URL-related features**:
-
-| Feature                | Purpose                 |
-| ---------------------- | ----------------------- |
-| `url_count_extracted`  | Number of URLs          |
-| `http_count`           | HTTP link count         |
-| `https_count`          | HTTPS link count        |
-| `ip_url_count`         | IP-address based URLs   |
-| `short_url_count`      | Known URL shorteners    |
-| `suspicious_url_count` | Suspicious URL keywords |
-| `avg_url_length`       | Average URL length      |
-| `max_url_length`       | Maximum URL length      |
-| `unique_domain_count`  | Unique domains          |
-
-This allows the model to consider both:
-
-> **What does the email say?**
-
-and
-
-> **What kind of links does the email contain?**
-
----
-
-# 📊 Model Benchmark
-
-Three classical machine-learning algorithms were evaluated.
-
-<div align="center">
-
-| Model                         |   Accuracy |  Precision |     Recall |         F1 |
-| :---------------------------- | ---------: | ---------: | ---------: | ---------: |
-| Multinomial Naive Bayes       |     97.18% |     98.93% |     95.61% |     97.24% |
-| Logistic Regression           |     98.65% |     98.55% |     98.86% |     98.70% |
-| Linear SVM                    |     99.23% |     99.27% |     99.25% |     99.26% |
-| **Linear SVM + URL Features** | **99.24%** | **99.23%** | **99.30%** | **99.27%** |
-
-</div>
-
-### 🏆 Best Model
-
-**Linear SVM + TF-IDF + URL Feature Engineering**
-
-```text
-Accuracy   → 99.24%
-Precision  → 99.23%
-Recall     → 99.30%
-F1 Score   → 99.27%
-```
-
----
-
-# 🎯 Confusion Matrix
-
-```text
-                    PREDICTED
-                 HAM       SPAM
-              ┌────────┬────────┐
-ACTUAL  HAM   │  7,853 │     66 │
-              ├────────┼────────┤
-        SPAM  │     60 │  8,519 │
-              └────────┴────────┘
-```
-
-### Interpretation
-
-* **7,853** legitimate emails correctly classified
-* **8,519** spam emails correctly classified
-* **66** legitimate emails incorrectly classified as spam
-* **60** spam emails incorrectly classified as legitimate
-
----
-
-# 🗃️ Dataset
-
-The training corpus was constructed by combining multiple public email datasets.
-
-### Sources
-
-* SpamAssassin
-* Nigerian Fraud
-* Enron
-* Ling
-* CEAS 08
-* Nazario
-
-### Final Dataset
-
-```text
-Total Emails       : 82,486
-HAM                : 39,595
-SPAM               : 42,891
-```
-
-The consolidated `phishing_email.csv` file was not added as another training source because its records correspond to the combined source datasets.
-
-> The raw dataset is intentionally excluded from the GitHub application repository.
-
----
-
-# 🧩 Feature Representation
-
-The final classifier receives:
-
-```text
-┌──────────────────────────────────────────────┐
-│                 FEATURE SPACE                │
-├──────────────────────────────────────────────┤
-│                                              │
-│   TF-IDF                     URL Features    │
-│   100,000                   +      9         │
-│                                              │
-└──────────────────────┬───────────────────────┘
-                       ▼
-                100,009 FEATURES
-                       │
-                       ▼
-                  Linear SVM
-```
-
-### TF-IDF Configuration
+The model uses a highly optimized TF-IDF vectorization strategy producing sparse CSR matrices.
 
 ```python
 TfidfVectorizer(
@@ -311,346 +138,152 @@ TfidfVectorizer(
 )
 ```
 
----
-
-# 🏗️ Project Architecture
-
-```text
-MailShield/
-│
-├── app/
-│   └── app.py
-│
-├── src/
-│   ├── __init__.py
-│   ├── preprocessing.py
-│   ├── features.py
-│   └── predict.py
-│
-├── models/
-│   ├── tfidf_vectorizer.pkl
-│   ├── url_scaler.pkl
-│   └── spam_classifier_svm.pkl
-│
-├── data/
-│   └── README.md
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
+**Training TF-IDF Shape:** `65,988 × 100,000`
 
 ---
 
-# ⚙️ Technology Stack
+## 🔗 URL Features
 
-<div align="center">
+Because the original dataset's "urls" field contained metadata rather than reliable raw URL text, URLs are extracted directly from the email body content during inference. Nine specific structural features are calculated:
 
-<img src="https://skillicons.dev/icons?i=python,sklearn,pandas,numpy,streamlit,git,github,vscode&perline=8" />
-
-</div>
-
-### Core Technologies
-
-| Technology       | Role                    |
-| :--------------- | :---------------------- |
-| 🐍 Python        | Core development        |
-| 🧠 Scikit-learn  | Machine learning        |
-| 📝 TF-IDF        | Text feature extraction |
-| 🔤 NLTK          | NLP preprocessing       |
-| 🧹 BeautifulSoup | HTML cleaning           |
-| 📊 Pandas        | Data processing         |
-| 🔢 NumPy         | Numerical computation   |
-| ⚡ SciPy          | Sparse feature fusion   |
-| 💾 Joblib        | Model serialization     |
-| 🎨 Streamlit     | Web application         |
-| 🐙 GitHub        | Version control         |
-| 💻 VS Code       | Development environment |
+1. `url_count_extracted`
+2. `http_count`
+3. `https_count`
+4. `ip_url_count`
+5. `short_url_count`
+6. `suspicious_url_count`
+7. `avg_url_length`
+8. `max_url_length`
+9. `unique_domain_count`
 
 ---
 
-# 📁 Repository Structure
+## 📈 Model Comparison
 
-```text
-📦 MailShield
-│
-├── 📂 app
-│   └── 🟦 app.py
-│
-├── 📂 src
-│   ├── 🟦 preprocessing.py
-│   ├── 🟦 features.py
-│   ├── 🟦 predict.py
-│   └── 🟦 __init__.py
-│
-├── 📂 models
-│   ├── 🧠 tfidf_vectorizer.pkl
-│   ├── 📐 url_scaler.pkl
-│   └── 🧠 spam_classifier_svm.pkl
-│
-├── 📂 data
-│   └── 📄 README.md
-│
-├── 📄 requirements.txt
-├── 📄 .gitignore
-└── 📄 README.md
+Extensive evaluation was conducted to select the best performing model.
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+| --- | --- | --- | --- | --- |
+| MultinomialNB | 97.1754% | 98.9265% | 95.6055% | 97.2377% |
+| LogisticRegression | 98.6483% | 98.5475% | 98.8577% | 98.7024% |
+| LinearSVC (TF-IDF only) | 99.2302% | 99.2656% | 99.2540% | 99.2598% |
+| **LinearSVC + URL Features** | **99.24%** | **99.23%** | **99.30%** | **99.27%** |
+
+**Final Deployed Model:** `LinearSVC + TF-IDF + URL Features`
+
+*(Note: The LinearSVC `decision_score` is a raw margin-based model decision signal and is NOT a calibrated probability).*
+
+### Confusion Matrix
+
+| | Predicted HAM | Predicted SPAM |
+| --- | --- | --- |
+| **Actual HAM** | 7853 (True HAM) | 66 (False SPAM) |
+| **Actual SPAM** | 60 (False HAM) | 8519 (True SPAM) |
+
+---
+
+## 💻 Tech Stack
+
+### Frontend
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
+
+### Backend
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![Uvicorn](https://img.shields.io/badge/Uvicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white)
+
+### Machine Learning
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white)
+
+---
+
+## 🌐 System Architecture
+
+```mermaid
+graph TD
+    User((User)) -->|Input Email| React[React + TypeScript + Vite]
+    React -->|HTTPS POST| FastAPI[FastAPI REST API]
+    FastAPI --> Predict[src/predict.py]
+    Predict --> Transforms[TF-IDF Vectorizer + URL Scaler]
+    Transforms --> Model[LinearSVC]
+    Model --> Signal[Prediction + Threat Signals]
+    Signal -->|JSON Response| React
 ```
 
 ---
 
-# 🚀 Local Setup
+## 🔌 API Documentation
 
-Clone the repository:
+**Endpoint:** `POST /api/analyze`
 
-```bash
-git clone https://github.com/mukherjeesarbottam-gif/MailShield.git
+**Request:**
+```json
+{
+  "subject": "URGENT: Verify Your Account",
+  "body": "Please verify your account: https://bit.ly/secure-login"
+}
 ```
 
-Move into the project:
-
-```bash
-cd MailShield
+**Response:**
+```json
+{
+  "prediction": "SPAM",
+  "decision_score": 1.43,
+  "url_count": 1,
+  "suspicious_url_count": 1,
+  "url_stats": {
+    "url_count_extracted": 1,
+    "http_count": 0,
+    "https_count": 1,
+    "ip_url_count": 0,
+    "short_url_count": 1,
+    "suspicious_url_count": 1,
+    "avg_url_length": 27.0,
+    "max_url_length": 27,
+    "unique_domain_count": 1
+  }
+}
 ```
+*(Decision scores may vary dynamically based on exact input variations).*
 
-Create a virtual environment:
+**Swagger UI:** [https://mailshield-heu9.onrender.com/docs](https://mailshield-heu9.onrender.com/docs)
 
-```bash
-python -m venv venv
-```
+---
 
-### Windows
+## 🚀 Run MailShield Locally
 
-```bash
-venv\Scripts\activate
-```
+I use **TWO** terminals to run MailShield locally. Follow these exact commands:
 
-### Linux / macOS
+### TERMINAL 1 — BACKEND:
 
-```bash
-source venv/bin/activate
-```
+```powershell
+cd C:\Users\SARBOTTAM\Desktop\Project\MailShield
 
-Install dependencies:
+python -m venv .venv
+.venv\Scripts\activate
 
-```bash
 pip install -r requirements.txt
+
+uvicorn backend.main:app --host 127.0.0.1 --port 8001
+```
+
+### TERMINAL 2 — FRONTEND:
+
+```powershell
+cd C:\Users\SARBOTTAM\Desktop\Project\MailShield\frontend
+
+npm install
+npm run dev
 ```
 
 ---
 
-# ▶️ Run MailShield
-
-Once the Streamlit interface is connected:
-
-```bash
-streamlit run app/app.py
-```
-
-The application will open in your browser.
-
----
-
-# 🖥️ Application Concept
-
-The planned user experience is intentionally simple.
-
-```text
-╭────────────────────────────────────────────╮
-│                                            │
-│             🛡️ MAILSHIELD                  │
-│        AI Email Security Analysis           │
-│                                            │
-├────────────────────────────────────────────┤
-│                                            │
-│ Email Subject                              │
-│ ┌────────────────────────────────────────┐ │
-│ │ Enter your email subject...            │ │
-│ └────────────────────────────────────────┘ │
-│                                            │
-│ Email Body                                 │
-│ ┌────────────────────────────────────────┐ │
-│ │ Paste your email here...               │ │
-│ │                                        │ │
-│ │                                        │ │
-│ └────────────────────────────────────────┘ │
-│                                            │
-│          🔍 ANALYZE EMAIL                  │
-│                                            │
-├────────────────────────────────────────────┤
-│                                            │
-│       🚨 SPAM DETECTED                     │
-│                                            │
-│       URLs Detected: 2                     │
-│       Decision Score: 4.82                 │
-│                                            │
-╰────────────────────────────────────────────╯
-```
-
-The user does **not** need to understand the underlying ML pipeline.
-
-They simply:
-
-**Paste email → Analyze → Receive result.**
-
----
-
-# 🔄 Inference Pipeline
-
-The deployed application will use the exact same feature pipeline as training.
-
-```text
-User Email
-    │
-    ▼
-Subject + Body
-    │
-    ▼
-Preprocessing
-    │
-    ├───────────────┐
-    ▼               ▼
-TF-IDF            URL Extraction
-    │               │
-    │               ▼
-    │          URL Feature Engine
-    │               │
-    │               ▼
-    │          URL Scaler
-    │               │
-    └───────┬───────┘
-            ▼
-      Feature Fusion
-            │
-            ▼
-       Saved Linear SVM
-            │
-            ▼
-      ┌─────┴─────┐
-      ▼           ▼
-    HAM         SPAM
-```
-
----
-
-# 🔐 Privacy & Security
-
-MailShield is an educational and research-oriented spam classification system.
-
-Users should **not submit passwords, authentication tokens, financial information, confidential business information, or other sensitive content** unless the deployed application has appropriate privacy protections.
-
-The model should be treated as a classification aid rather than a replacement for enterprise email security systems.
-
----
-
-# ⚠️ Limitations
-
-The reported performance is based on a held-out test set and may not represent future real-world email traffic.
-
-Potential limitations include:
-
-* Dataset bias
-* Distribution shift
-* New spam campaigns
-* Adversarial emails
-* URL obfuscation
-* Multilingual content
-* HTML-heavy emails
-* Previously unseen vocabulary
-* Concept drift
-
-A production deployment should therefore include monitoring and periodic model evaluation.
-
----
-
-# 🔮 Future Roadmap
-
-### Phase 1 — Completed
-
-* [x] Dataset integration
-* [x] Data quality analysis
-* [x] Text cleaning
-* [x] NLP preprocessing
-* [x] TF-IDF feature extraction
-* [x] Multiple ML models
-* [x] URL feature engineering
-* [x] Feature fusion
-* [x] Model evaluation
-* [x] Final model selection
-* [x] Reusable prediction pipeline
-
-### Phase 2 — In Progress
-
-* [ ] Streamlit UI
-* [ ] Interactive email analysis
-* [ ] Modern dashboard
-* [ ] GitHub project integration
-
-### Phase 3 — Future
-
-* [ ] Public deployment
-* [ ] Explainable AI
-* [ ] Transformer-based classifier
-* [ ] Advanced URL reputation
-* [ ] Sender/domain analysis
-* [ ] Multilingual detection
-* [ ] Continuous retraining
-* [ ] Real-time monitoring
-
----
-
-# 📚 Key Learning Outcomes
-
-Through this project, the following concepts were implemented:
-
-* Natural Language Processing
-* Text normalization
-* Tokenization
-* Stopword processing
-* Lemmatization
-* TF-IDF
-* N-gram features
-* Sparse matrices
-* URL feature engineering
-* Feature scaling
-* Naive Bayes
-* Logistic Regression
-* Linear SVM
-* Model evaluation
-* Confusion matrices
-* Precision / Recall / F1
-* Model serialization
-* Reusable inference pipelines
-* Streamlit deployment architecture
-
----
-
-# 👨‍💻 Author
-
-<div align="center">
-
-### Sarbottam Mukherjee
-
-**AI/ML • NLP • Machine Learning**
-
-<br/>
-
-<a href="https://github.com/mukherjeesarbottam-gif">
-<img src="https://img.shields.io/badge/GitHub-Sarbottam%20Mukherjee-181717?style=for-the-badge&logo=github"/>
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06b6d4,50:1e3a8a,100:0f172a&height=120&section=footer" width="100%"/>
-
-### 🛡️ MAILSHIELD
-
-**AI-powered protection against unwanted email.**
-
-⭐ If you find this project useful, consider giving it a star.
-
-</div>
-
+## 👨‍💻 Developer
+**Sarbottam Mukherjee**  
+[GitHub Repository](https://github.com/mukherjeesarbottam-gif/MailShield)
