@@ -36,7 +36,8 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('http://127.0.0.1:8001/api/analyze', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001';
+      const response = await axios.post(`${API_URL}/api/analyze`, {
         subject: subject.trim(),
         body: body.trim()
       });
