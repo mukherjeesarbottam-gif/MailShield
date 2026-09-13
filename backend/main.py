@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="MailShield API", lifespan=lifespan)
 
-# Allow CORS for local development
+# Allow CORS for local development and production
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -32,7 +32,8 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://localhost:5174",
         "http://localhost:5175",
-        "http://127.0.0.1:5175"
+        "http://127.0.0.1:5175",
+        "https://mailshield-frontend.onrender.com"
     ],
     allow_credentials=True,
     allow_methods=["*"],
