@@ -45,14 +45,11 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
     setErrorMessage('');
 
     try {
-      // Production API URL is supplied by Vite through Render
-      const API_URL = import.meta.env.VITE_API_URL;
-
-      if (!API_URL) {
-        throw new Error(
-          'MailShield API URL is not configured.'
-        );
-      }
+      // Use Render API in production.
+      // VITE_API_URL can still override this when configured.
+      const API_URL =
+        import.meta.env.VITE_API_URL ||
+        'https://mailshield-heu9.onrender.com';
 
       const response = await axios.post(`${API_URL}/api/analyze`, {
         subject: subject.trim(),
@@ -64,7 +61,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
         setResultData(response.data);
         setStatus('RESULT');
       }, 2500);
-
     } catch (error: any) {
       setTimeout(() => {
         setErrorMessage(
@@ -88,13 +84,11 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
 
   return (
     <div className="w-[92%] max-w-[740px] mx-auto py-12 relative z-20">
-
       <motion.div
         whileHover={{ y: -2 }}
         transition={{ duration: 0.3 }}
         className="bg-white/40 dark:bg-surface/80 backdrop-blur-[12px] border border-white/60 dark:border-white/10 rounded-2xl p-6 md:p-10 shadow-[0_10px_40px_rgba(200,150,255,0.15)] dark:shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
       >
-
         <div className="mb-8">
           <h2 className="text-2xl font-bold tracking-wide mb-1 drop-shadow-sm">
             Email Spam Analyzer
@@ -106,7 +100,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
         </div>
 
         <AnimatePresence mode="wait">
-
           {status === 'IDLE' && (
             <motion.div
               key="form"
@@ -115,9 +108,7 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
               exit={{ opacity: 0, height: 0 }}
               className="flex flex-col gap-6"
             >
-
               <div className="flex flex-col gap-2 group">
-
                 <label className="text-xs font-bold tracking-widest text-secondary uppercase group-focus-within:text-accent-green transition-colors">
                   Email Subject
                 </label>
@@ -129,11 +120,9 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
                   placeholder="Enter email subject..."
                   className="w-full bg-background border border-border/80 shadow-inner rounded-lg px-4 py-4 text-base focus:outline-none focus:border-accent-green/50 focus:ring-1 focus:ring-accent-green/30 transition-all text-primary placeholder:text-secondary/50"
                 />
-
               </div>
 
               <div className="flex flex-col gap-2 group">
-
                 <label className="text-xs font-bold tracking-widest text-secondary uppercase group-focus-within:text-accent-green transition-colors">
                   Email Body
                 </label>
@@ -145,7 +134,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
                   rows={8}
                   className="w-full bg-background border border-border/80 shadow-inner rounded-lg px-4 py-4 text-base focus:outline-none focus:border-accent-green/50 focus:ring-1 focus:ring-accent-green/30 transition-all text-primary placeholder:text-secondary/50 resize-y"
                 />
-
               </div>
 
               <motion.button
@@ -158,7 +146,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
               </motion.button>
 
               <div className="mt-8 flex flex-col items-center justify-center text-center">
-
                 <ThunderShield />
 
                 <p className="text-sm text-secondary dark:text-gray-400 font-medium max-w-sm mt-2">
@@ -170,18 +157,14 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
                 >
                   Made by Sarbottam Mukherjee
                 </div>
-
               </div>
-
             </motion.div>
           )}
-
         </AnimatePresence>
 
         {/* Dynamic State Rendering */}
 
         <AnimatePresence mode="wait">
-
           {status === 'ERROR' && (
             <motion.div
               key="error"
@@ -190,7 +173,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
               exit={{ opacity: 0, height: 0 }}
               className="mt-8 p-6 bg-accent-red/10 border border-accent-red/20 rounded-xl text-center"
             >
-
               <div className="text-accent-red font-bold tracking-widest text-sm mb-2">
                 ANALYSIS SERVICE UNAVAILABLE
               </div>
@@ -205,7 +187,6 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
               >
                 TRY AGAIN
               </button>
-
             </motion.div>
           )}
 
@@ -227,11 +208,9 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-
               <ThreatResult data={resultData} />
 
               <div className="mt-12 flex justify-center">
-
                 <motion.button
                   onClick={handleReset}
                   whileHover={{
@@ -248,16 +227,11 @@ const EmailAnalyzer: React.FC<EmailAnalyzerProps> = ({ onStatusChange }) => {
                 >
                   Analyze Another Email
                 </motion.button>
-
               </div>
-
             </motion.div>
           )}
-
         </AnimatePresence>
-
       </motion.div>
-
     </div>
   );
 };
